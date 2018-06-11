@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DeviceLibs/C#/.vs
+/DeviceLibs/C#/bin
+/DeviceLibs/C#/StorageSystem/obj
+/DeviceLibs/C#/StorageSystem/ChangeLog.txt
+/DeviceLibs/C#/StorageSystem.Sample/obj
+/.vs

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80355C14-B6DF-41F4-AC64-3F4A2DE29386}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CareFusion.Lib.StorageSystem</RootNamespace>
+    <AssemblyName>StorageSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>StorageSystem.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RowaLog, Version=1.3.0.3, Culture=neutral, PublicKeyToken=aaf6106c7808b468, processorArchitecture=MSIL">
+      <HintPath>..\packages\RowaLog.1.3.0.3\lib\net40\RowaLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsyncEventProvider.cs" />
+    <Compile Include="DigitalShelfDelegates.cs" />
+    <Compile Include="IDigitalShelf.cs" />
+    <Compile Include="Input\IInitiateInputRequest.cs" />
+    <Compile Include="Input\InitiateInputRequestState.cs" />
+    <Compile Include="Input\InputErrorType.cs" />
+    <Compile Include="Input\InputResult.cs" />
+    <Compile Include="Input\IStockDeliveryInfo.cs" />
+    <Compile Include="Input\IStockDeliveryItem.cs" />
+    <Compile Include="Input\StockDeliveryState.cs" />
+    <Compile Include="Logging\LogExtensions.cs" />
+    <Compile Include="Logging\LogManagerProxy.cs" />
+    <Compile Include="Logging\WwiLogIntercept.cs" />
+    <Compile Include="Net\TcpClientExtensions.cs" />
+    <Compile Include="Output\ICriteria.cs" />
+    <Compile Include="Output\IDispensedPack.cs" />
+    <Compile Include="Output\ILabel.cs" />
+    <Compile Include="Output\IOutputProcessInfo.cs" />
+    <Compile Include="Output\LabelState.cs" />
+    <Compile Include="RowaDigitalShelf.cs" />
+    <Compile Include="Sales\IArticleInfoRequest.cs" />
+    <Compile Include="Sales\IArticlePriceRequest.cs" />
+    <Compile Include="Sales\IDigitalShelfArticle.cs" />
+    <Compile Include="Sales\IPriceInformation.cs" />
+    <Compile Include="Sales\IShoppingCart.cs" />
+    <Compile Include="Sales\IShoppingCartCriteria.cs" />
+    <Compile Include="Sales\IShoppingCartItem.cs" />
+    <Compile Include="Sales\IShoppingCartRequest.cs" />
+    <Compile Include="Sales\IShoppingCartUpdateRequest.cs" />
+    <Compile Include="Sales\ITag.cs" />
+    <Compile Include="Sales\PriceCategory.cs" />
+    <Compile Include="Sales\ShoppingCartStatus.cs" />
+    <Compile Include="Stock\IArticleStockRequest.cs" />
+    <Compile Include="Stock\IStockInfoRequest.cs" />
+    <Compile Include="Wwks.2\Types\DigitalShelf\AlternativeArticles.cs" />
+    <Compile Include="Wwks.2\Types\DigitalShelf\AlternativePackSizeArticles.cs" />
+    <Compile Include="Wwks.2\Types\DigitalShelf\CrossSellingArticles.cs" />
+    <Compile Include="Wwks.2\Types\DigitalShelf\PriceInformation.cs" />
+    <Compile Include="Wwks.2\Types\DigitalShelf\ShoppingCart.cs" />
+    <Compile Include="Wwks.2\Types\DigitalShelf\ShoppingCartItem.cs" />
+    <Compile Include="Wwks.2\Types\DigitalShelf\UpdateResult.cs" />
+    <Compile Include="Wwks.2\Types\Tag.cs" />
+    <Compile Include="State\ComponentType.cs" />
+    <Compile Include="State\IComponent.cs" />
+    <Compile Include="Stock\IArticle.cs" />
+    <Compile Include="Input\IInputPack.cs" />
+    <Compile Include="Input\IInputRequest.cs" />
+    <Compile Include="Input\InputHandling.cs" />
+    <Compile Include="Output\IOutputProcess.cs" />
+    <Compile Include="Stock\IPack.cs" />
+    <Compile Include="IStorageSystem.cs" />
+    <Compile Include="Input\IMasterArticle.cs" />
+    <Compile Include="Input\IStockDelivery.cs" />
+    <Compile Include="Output\OutputProcessPriority.cs" />
+    <Compile Include="Output\OutputProcessState.cs" />
+    <Compile Include="Stock\IStockLocation.cs" />
+    <Compile Include="Stock\PackShape.cs" />
+    <Compile Include="Stock\PackState.cs" />
+    <Compile Include="StorageSystemDelegates.cs" />
+    <Compile Include="State\ComponentState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RowaStorageSystem.cs" />
+    <Compile Include="Wwks.2\MessageDispatcher.cs" />
+    <Compile Include="Wwks.2\MessageInterceptor.cs" />
+    <Compile Include="Wwks.2\Messages\ArticleInformation\ArticleInfoRequest.cs" />
+    <Compile Include="Wwks.2\Messages\ArticleInformation\ArticleInfoResponse.cs" />
+    <Compile Include="Wwks.2\Messages\ArticleInformation\ArticlePriceRequest.cs" />
+    <Compile Include="Wwks.2\Messages\ArticleInformation\ArticlePriceResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Configuration\ConfigurationGetRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Configuration\ConfigurationGetResponse.cs" />
+    <Compile Include="Wwks.2\Messages\EnvelopeBase.cs" />
+    <Compile Include="Wwks.2\Messages\Hello\HelloRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Hello\HelloResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Input\ArticleMasterSetRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Input\ArticleMasterSetResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Input\InitiateInputMessage.cs" />
+    <Compile Include="Wwks.2\Messages\Input\InitiateInputRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Input\InitiateInputResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Input\InputMessage.cs" />
+    <Compile Include="Wwks.2\Messages\Input\InputRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Input\InputResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Input\StockDeliverySetRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Input\StockDeliverySetResponse.cs" />
+    <Compile Include="Wwks.2\Messages\KeepAlive\KeepAliveRequest.cs" />
+    <Compile Include="Wwks.2\Messages\KeepAlive\KeepAliveResponse.cs" />
+    <Compile Include="Wwks.2\Messages\MessageBase.cs" />
+    <Compile Include="Wwks.2\Messages\MessageId.cs" />
+    <Compile Include="Wwks.2\Messages\Output\OutputMessage.cs" />
+    <Compile Include="Wwks.2\Messages\Output\OutputRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Output\OutputResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Sales\ArticleSelectedMessage.cs" />
+    <Compile Include="Wwks.2\Messages\Sales\ShoppingCartRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Sales\ShoppingCartResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Sales\ShoppingCartUpdateMessage.cs" />
+    <Compile Include="Wwks.2\Messages\Sales\ShoppingCartUpdateRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Sales\ShoppingCartUpdateResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Status\StatusRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Status\StatusResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Stock\StockInfoMessage.cs" />
+    <Compile Include="Wwks.2\Messages\Stock\StockInfoRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Stock\StockInfoResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Stock\StockLocationInfoRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Stock\StockLocationInfoResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Task\TaskCancelRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Task\TaskCancelResponse.cs" />
+    <Compile Include="Wwks.2\Messages\Task\TaskInfoRequest.cs" />
+    <Compile Include="Wwks.2\Messages\Task\TaskInfoResponse.cs" />
+    <Compile Include="Wwks.2\Types\Article.cs" />
+    <Compile Include="Wwks.2\Types\Box.cs" />
+    <Compile Include="Wwks.2\Types\Capability.cs" />
+    <Compile Include="Wwks.2\Types\Component.cs" />
+    <Compile Include="Wwks.2\Types\Criteria.cs" />
+    <Compile Include="Wwks.2\Types\Details.cs" />
+    <Compile Include="Wwks.2\Types\Error.cs" />
+    <Compile Include="Wwks.2\Types\Handling.cs" />
+    <Compile Include="Wwks.2\Types\Label.cs" />
+    <Compile Include="Wwks.2\Types\Pack.cs" />
+    <Compile Include="Wwks.2\Types\SetResult.cs" />
+    <Compile Include="Wwks.2\Types\StockDelivery.cs" />
+    <Compile Include="Wwks.2\Types\StockLocation.cs" />
+    <Compile Include="Wwks.2\Types\Subscriber.cs" />
+    <Compile Include="Wwks.2\Types\Task.cs" />
+    <Compile Include="Xml\ByteArrayExtensions.cs" />
+    <Compile Include="Xml\TextConverter.cs" />
+    <Compile Include="Xml\TypeConverter.cs" />
+    <Compile Include="Xml\XmlMessageStream.cs" />
+    <Compile Include="Xml\XmlObjectStream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="StorageSystem.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChangeLog.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
